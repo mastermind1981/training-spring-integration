@@ -33,6 +33,8 @@ public class CacheApplicationTest {
         assertEquals(EntityUtils.toString(firstResult.getEntity()),
                 EntityUtils.toString(secondResult.getEntity()));
 
+
+        assertTrue(secondResult.containsHeader("Cache-Control"));
         assertEquals("immutable", secondResult.getFirstHeader("Cache-Control").getValue());
     }
 
